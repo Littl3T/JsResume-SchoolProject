@@ -28,6 +28,9 @@
     color: var(--color-text);
     margin: 0;
     padding: 0;
+    scrollbar-color: var(--color-primary) var(--color-bg);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
   }
   
   /* ==============================
@@ -85,6 +88,83 @@
    color: var(--color-primary);
    font-weight: bold;
 }
+#profilePic{
+   height: 15vw;
+}
+#profilePic img{
+   height: 100%;
+}
+#homePageMain{
+   display: flex;
+   flex-flow: row nowrap;
+   min-height: 100vh;
+}
+#mainInfomations{
+   display: flex;
+   flex-flow: column nowrap;
+   width: 70vw;
+}
+#sectionWHO{
+   width: 50vw;
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   justify-content: flex-start;
+}
+#myInfo h2 {
+   font-size: 3.5rem !important;
+   margin-bottom: 0;
+}
+#myInfo p{
+   font-size: 1.1rem;
+   text-align: justify;
+}
+#mainInfomations section h2{
+   margin: 0;
+   font-size: 2.2rem;
+}
+
+#sectionExperience{
+   display: flex;
+   flex-flow: column nowrap;
+   align-items: center;
+}
+
+.experienceCard{
+   display: flex;
+   flex-flow: column nowrap;
+}
+.experienceMainInfos{
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   justify-content: space-between;
+}
+.experienceMainInfos h3{
+   color: var(--color-primary)
+}
+.experienceDetails{
+   display: flex;
+   flex-flow: column nowrap;
+   align-items: flex-start;
+   justify-content: center;
+}
+.experienceDetails p{
+   text-align: justify;
+}
+.experienceDetails h4{
+   margin: 0;
+}
+
+
+
+
+
+#otherInformations{
+   display: flex;
+   flex-flow: column nowrap;
+   width: 30vw;
+}
 
   /* ==============================
      5. MEDIA QUERIES
@@ -125,7 +205,6 @@
       font-size: 1.5rem;
    }
   }
-  
   /* ==============================
      6. STYLES D’IMPRESSION
   ================================ */
@@ -152,6 +231,9 @@
     }
     #WhoAmI h2{
       font-size: 1rem;
+    }
+    #homePageHeader{
+      height: auto;
     }
   }
 
