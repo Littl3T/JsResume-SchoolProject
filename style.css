@@ -1,0 +1,169 @@
+/* ==============================
+   1. VARIABLES GLOBALES
+================================ */
+:root {
+    /* Couleurs principales */
+    --color-bg: #111111;
+    --color-text: #ffffff;
+    --color-primary: #f43838;
+    --color-secondary: #150971; 
+  
+    /* Typographie */
+    --font-main: 'Open Sans', sans-serif;
+    --font-title: 'Montserrat', sans-serif;
+
+    /* Autres variables */
+    --transition-default: all 200ms ease-in-out;
+  }
+ 
+  
+  /* ==============================
+     2. RESET / BASE
+     (Optionnel si tu utilises un reset.css externe)
+  ================================ */
+
+  html, body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ==============================
+     3. LAYOUT GÉNÉRAL
+  ================================ */
+#homePageHeader{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+}
+.chart-container {
+   position: relative;
+   width: 50vw;
+   height: 50vh;
+}
+#WhoAmI h1{
+   color: var(--color-primary);
+   font-size: 5rem;
+   margin: 0;
+}
+#WhoAmI h2{
+   margin: 0 0 1rem 0;
+   font-size: 2rem;
+}
+#WhoAmI a{
+   font-size: 1.2rem;
+   text-decoration: none;
+   color: var(--color-text);
+   padding:1rem;
+   transition: var(--transition-default);
+}
+#WhoAmI a:hover{
+   margin-left: 1rem;
+}
+.bounce-dots {
+   display: inline-block;
+}
+.dot {
+   display: inline-block;
+   animation: bounce 1s infinite ease-in-out;
+}
+.dot:nth-child(1) {
+   animation-delay: 0s;
+}
+.dot:nth-child(2) {
+   animation-delay: 0.2s;
+}
+.dot:nth-child(3) {
+   animation-delay: 0.4s;
+}
+.arrow{
+   color: var(--color-primary);
+   font-weight: bold;
+}
+
+  /* ==============================
+     5. MEDIA QUERIES
+  ================================ */
+  /* Grand écran  */
+  @media screen and (max-width: 1200px) {
+      #homePageHeader{
+         flex-flow: column-reverse nowrap;
+         justify-content: center;
+         align-items: center;
+      }
+      .chart-container {
+         width: 40rem;
+         height: 30rem;
+      }
+  }
+  
+  /* Écrans moyens */
+  @media screen and (max-width: 992px) {
+   .chart-container {
+      width: 35em;
+   }
+  }
+  
+  /* Écrans petits */
+  @media screen and (max-width: 576px) {
+   .chart-container {
+      width: 100vw;
+      height: 50vh;
+   }
+   #WhoAmI{
+      text-align: center;
+   }
+   #WhoAmI h1{
+      font-size: 3rem;
+   }
+   #WhoAmI h2{
+      font-size: 1.5rem;
+   }
+  }
+  
+  /* ==============================
+     6. STYLES D’IMPRESSION
+  ================================ */
+  @media print {
+    /* Désactiver les animations, backgrounds trop colorés, etc. */
+    * {
+      background: #fff !important;
+      color: #000 !important;
+    }
+    #homePageHeader{
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .chart-container{
+      display: none;
+    }
+    #WhoAmI a{
+      display: none;
+    }
+    #WhoAmI h1{
+      font-size: 2rem;
+    }
+    #WhoAmI h2{
+      font-size: 1rem;
+    }
+  }
+
+/* ==============================
+   7. Animations Keyframes
+================================ */
+@keyframes bounce {
+   0%, 100% {
+     transform: translateY(0);
+   }
+   50% {
+     transform: translateY(-6px);
+   }
+}
+  
