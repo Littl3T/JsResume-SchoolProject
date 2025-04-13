@@ -1,178 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom Deneyer</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"defer ></script>
-    <script src="Scripts/skillChart.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV - Tom Deneyer</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header id="homePageHeader">
-        <div class="chart-container">
-            <canvas id="skillsRadar"></canvas>
+  <header id="hero">
+    <div id="bg-chart-container">
+      <canvas id="bgChart"></canvas>
+    </div>
+    <div class="header-content">
+      <div class="header-text">
+        <h1>Tom Deneyer</h1>
+        <h2>Power Platform Developer &amp; Cybersecurity Enthusiast</h2>
+        <p class="tagline">Data lover | Full-Stack Developer | Cybersecurity Student</p>
+        <div class="contact-info">
+          <span class="contact-item">+32 472234527</span> • 
+          <span class="contact-item"><a href="mailto:tomdeney@gmail.com">tomdeney@gmail.com</a></span> • 
+          <span class="contact-item"><a href="http://www.linkedin.com/in/tomdeneyer" target="_blank">LinkedIn</a></span> • 
+          <span class="contact-item"><a href="https://github.com/Littl3T" target="_blank">GitHub</a></span>
         </div>
-        <div id="WhoAmI">
-            <h1>Tom Deneyer</h1>
-            <h2>Data Lover & Cybersecurity Student</h2>
-            <div id="myInfo">
-                <p>I'm  a passionate data enthusiast who thrives on turning raw insights into impactful solutions. At Ecofrost, I work as a Power Platform Developer, automating workflows and making apps. I'm also studying cybersecurity and development at Haute Ecole en hainaut. When I'm not coding, my love for music inspires creativity in everything I do.</p>
-            </div>
-            <a href="#homePageMain">
-                <span class="arrow">➜</span> Get to know me
-                <span class="bounce-dots">
-                    <span class="dot">.</span>
-                    <span class="dot">.</span>
-                    <span class="dot">.</span>
-                </span>
-            </a>
+        <a href="#mainContainer" class="btn-cta">Print my Resume</a>
+      </div>
+      <div class="header-photo">
+        <img src="Ressources/img/NoBackgroundProfile.webp" alt="Photo professionnelle Tom Deneyer">
+      </div>
+    </div>
+  </header>
+  <main id="mainContainer">
+    <div class="left-column">
+      <section id="education">
+        <h2>Education</h2>
+        <div class="section-content">
+          <h3>Haute Ecole en Hainaut, Mons (2023 - Present)</h3>
+          <p class="detail">Bachelor’s degree in computer science, telecommunication & development  (16.41/20)</p>
+          <p>Focus on cybersecurity. Hands-on projects in Linux administration, Windows Server 2019 and relational database design with 
+            SQL, MySQL, MariaDB. Active member of the Cisco Networking Academy, continuing to expand networking expertise and 
+            practical skill set. 
+            Multiple full-stack development projects (HTML, CSS, PHP, JavaScript, jQuery, React)</p>
+          <h3>LHS Indiana, Loogootee (2022 - 2023)</h3>
+          <p class="detail">Immersive exchange year, computer science and arts (GPA : 3.94)</p>
+          <p>Lived with an American family for 10 months, attended classes as a Senior, and participated in 5 extracurricular activities 
+            representing the school. Such as music, art, photography, theater and cross-country. </p>
+          <h3>Athenée Royal de Mons (2016 - 2022)</h3>
+          <p class="detail">CESS Advanced Maths &amp; Sciences </p>
         </div>
-    </header>
-    <main id="homePageMain">
-        <div id="mainInfomations">
-            <section id="sectionWHO">
-                <div id="profilePic">
-                    <img src="Ressources/img/NoBackgroundProfile.webp" alt="My Profile picture Tom deneyer Profesional">
-                </div>
-            </section>
-            <section id="sectionExperience">
-                <h2>Experiences</h2>
-                <div class="experienceCard">
-                    <div class="experienceMainInfos">
-                        <h3>Power Platform Developer</h3>
-                        <p>Ecofrost - Peruwelz,Belgium</p>
-                    </div>
-                    <div class="experienceDetails">
-                        <h4>Jul.2024 - Present</h4>
-                        <p>
-                        At Ecofrost, I work as a Power Platform Developer where I collaborate closely with clients to gather requirements and develop intuitive, user-friendly interfaces. I have built and deployed over 15 custom mobile and desktop applications with automated workflows using Power Apps and Power Automate, all within a secure environment leveraging Azure Active Directory permissions and APIs. Additionally, I analyze data with Power BI to generate actionable insights through comprehensive reports and KPIs, and I have developed Python scripts using the Panda library to automate cloud database updates and process ERP exports, optimizing our data workflows. I also structure SharePoint Lists and Pages for various company departments.
-                        </p>
-                    </div>
-                </div>
-                <div class="experienceCard">
-                    <div class="experienceMainInfos">
-                        <h3>3D & 2D Mechanical Engineering Designer</h3>
-                        <p>Lion Manufacturing - Loogootee, Indiana USA</p>
-                    </div>
-                    <div class="experienceDetails">
-                        <h4>Aug.2022-2023</h4>
-                        <p>
-                        At Lion Manufacturing, I served as a 3D & 2D Mechanical Engineering Designer, managing design requests for 3D printing and laser cutting processes in metalworking and the American defense sector. I created precise models using Autodesk Inventor based on real-life measurements and successfully translated clients' needs into final products, consistently meeting deadlines and adhering to budget constraints.
-                        </p>
-                    </div>
-                </div>
-                <div class="experienceCard">
-                    <div class="experienceMainInfos">
-                        <h3>Woodturner Entrepreneur</h3>
-                        <p>Self-employed - Frameries, Belgium</p>
-                    </div>
-                    <div class="experienceDetails">
-                        <h4>Dec.2017-Present</h4>
-                        <p>
-                        As a self-employed woodturner and entrepreneur, I crafted high-quality, premium handmade wooden products that showcase both precision and creativity. I organized and led around 20 private woodturning workshops, which enhanced my communication and instructional skills, and I sold my products at craft markets, demonstrating strong customer service and sales abilities. My work has also been featured in live interviews on three major nationwide Belgian media outlets.
-                        </p>
-                    </div>
-                </div>
-            </section>
+      </section>
+      <section id="experience">
+        <h2>Proffesional Experience</h2>
+        <div class="section-content">
+          <h3>Ecofrost, Peruwelz (Jul. 2024 - Present)</h3>
+          <p class="detail">Power Platform Developer</p>
+          <p>I collaborate with clients to gather requirements and design user-friendly interfaces, building over 15 secure custom mobile and desktop applications using Power Apps, Power Automate, and Azure Active Directory integrations. Additionally, I conduct data analysis with Power BI, automated data workflows using Python and Pandas, and streamlined operations by structuring SharePoint Lists and Pages for various departments.</p>
+          <h3>Lion Manufacturing, Loogootee (Aug. 2022 - 2023)</h3>
+          <p class="detail">3D &amp; 2D mechanical engineering designer</p>
+          <p>I managed 3D design requests for 3D printing and laser cutting processes in the metalworking and American defense sectors. I created accurate models using Autodesk Inventor, ensuring they reflected real-life measurements. I also translated clients' needs into final products, always meeting deadlines and staying within budget, specifically regarding material selection.</p>
+          <h3>Entrepreneur - Woodturner (Dec. 2017 - Present)</h3>
+          <p class="detail">Woodturner self-employed Entrepeneur</p>
+          <p>I craft high-quality, premium handmade wooden products with precision and creativity, organized and led around 20 private woodturning workshops so far, solding my products at craft markets while demonstrating strong customer service and sales abilities. I was also featured in live interviews on three major nationwide Belgian media outlets (DH, TéléMB, RTBF).</p>
         </div>
-        <div id="otherInformations">
-            <section>
-                <h2>Languages</h2>
-                <div class="languageCard">
-                    <h3>French</h3>
-                    <p>Native speaker</p>
-                </div>
-                <div class="languageCard">
-                    <h3>English</h3>
-                    <p>Full professional proficiency</p>
-                </div>
-                <div class="languageCard">
-                    <h3>Dutch</h3>
-                    <p>Limited working proficiency</p>
-                </div>
-                <div class="languageCard">
-                    <h3>Ulrainian</h3>
-                    <p>Elementary proficiency</p>
-                </div>
-            </section>
-            <section>
-                <h2>Skills</h2>
-                <div class="skillSet">
-                    <h3>Networking</h3>
-                    <span class="skillCard">Cisco configuration</span>
-                    <span class="skillCard">Alcatel configuration</span>
-                    <span class="skillCard">Network security</span>
-                    <span class="skillCard">Network monitoring</span>
-                    <span class="skillCard">Network troubleshooting</span>
-                    <span class="skillCard">Network design</span>
-                    <span class="skillCard">Fortinet firewall</span>
-                </div>
-                <div>
-                    <h3>Programming & WebDesign</h3>
-                    <span class="skillCard">Python</span>
-                    <span class="skillCard">JavaScript</span>
-                    <span class="skillCard">HTML</span>
-                    <span class="skillCard">CSS</span>
-                    <span class="skillCard">C++</span>
-                    <span class="skillCard">SQL</span>
-                    <span class="skillCard">PHP</span>
-                    <span class="skillCard">Power Fx</span>
-                    <span class="skillCard">Bash</span>
-                    <span class="skillCard">PowerShell</span>
-                    <span class="skillCard">React</span>
-                    <span class="skillCard">Jquerry</span>
-                    <span class="skillCard">UML</span>
-                    <span class="skillCard">OOP</span>
-                    <span class="skillCard">APIs</span>
-                    <span class="skillCard">PostMan</span>
-                    <span class="skillCard">Data Structure</span>
-                </div>
-                <div>
-                    <h3>Data Analysis & related</h3>
-                    <span class="skillCard">Power BI</span>
-                    <span class="skillCard">Excel</span>
-                    <span class="skillCard">Pandas</span>
-                    <span class="skillCard">NumPy</span>
-                    <span class="skillCard">PowerQuerry</span>
-                    <span class="skillCard">DAX</span>
-                    <span class="skillCard">Qlick</span>
-                    <span class="skillCard">Data reporting</span>
-                    <span class="skillCard">Data wrangling</span>
-                </div>
-                <div>
-                    <h3>DataBases</h3>
-                    <span class="skillCard">SQL Server</span>
-                    <span class="skillCard">MySQL</span>
-                    <span class="skillCard">MardiaDB</span>
-                    <span class="skillCard">MongoDB</span>
-                    <span class="skillCard">NoSQL</span>
-                    <span class="skillCard">Relational database modeling</span>
-                </div>
-                <div>
-                    <h3>Other</h3>
-                    <span class="skillCard">Git/Github</span>
-                    <span class="skillCard">HyperV Virtualization</span>
-                    <span class="skillCard">Raspberry Pi</span>
-                    <span class="skillCard">Arduino</span>
-                    <span class="skillCard">3D Printing</span>
-                    <span class="skillCard">Laser cutting</span>
-                    <span class="skillCard">3D modeling</span>
-                    <span class="skillCard">Autodesk Inventor</span>
-                    <span class="skillCard">Fusion 360</span>
-                    <span class="skillCard">Photoshop</span>
-                    <span class="skillCard">Illustrator</span>
-                    <span class="skillCard">Figma</span>
-                    <span class="skillCard">Microsoft Office</span>
-                    <span class="skillCard">Microsoft 365</span>
-                    <span class="skillCard">Microsoft Azure</span>
-                    <span class="skillCard">Microsoft Power Platform</span>
-                    <span class="skillCard">Microsoft SharePoint</span>
-                    <span class="skillCard">Microsoft Power Automate</span>
-                    <span class="skillCard">Microsoft Power Apps</span>
-                </div>
-            </section>
+      </section>
+    </div>
+    <div class="right-column">
+      <section id="languages">
+        <h2>Languages</h2>
+        <div class="section-content">
+          <div class="badge-list">
+            <span class="badge">French (Native speaker)</span>
+            <span class="badge">English (Full professional proficiency)</span>
+            <span class="badge">Dutch (Limited working proficiency )</span>
+            <span class="badge">Ukrainian (Elementary 
+                proficiency)</span>
+          </div>
         </div>
-    </main>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="section-content">
+          <h3>Networking</h3>
+          <div class="badge-list">
+            <span class="badge">Troubleshooting</span>
+            <span class="badge">Design</span>
+            <span class="badge">Cisco</span>
+            <span class="badge">Fortinet firewalls</span>
+            <span class="badge">Alcatel</span>
+          </div>
+          <h3>Programmation &amp; Web</h3>
+          <div class="badge-list">
+            <span class="badge">Python</span>
+            <span class="badge">Power FX</span>
+            <span class="badge">C++</span>
+            <span class="badge">Bash</span>
+            <span class="badge">HTML/CSS</span>
+            <span class="badge">JS</span>
+            <span class="badge">PHP</span>
+            <span class="badge">jQuery</span>
+            <span class="badge">React</span>
+          </div>
+          <h3>Data Analysis</h3>
+          <div class="badge-list">
+            <span class="badge">Power BI</span>
+            <span class="badge">Power Query M</span>
+            <span class="badge">Qlick</span>
+            <span class="badge">Excel</span>
+            <span class="badge">Panda</span>
+            <span class="badge">DAX</span>
+          </div>
+          <h3>DataBases</h3>
+          <div class="badge-list">
+            <span class="badge">SQL</span>
+            <span class="badge">MariaDB</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">MS SQL Server</span>
+          </div>
+          <h3>Others</h3>
+          <div class="badge-list">
+            <span class="badge">Azure AD</span>
+            <span class="badge">UI/UX</span>
+            <span class="badge">Arduino</span>
+            <span class="badge">Raspberry Pi</span>
+            <span class="badge">Linux</span>
+            <span class="badge">Windows Server</span>
+            <span class="badge">Hyper-V</span>
+            <span class="badge">Agile-Scrum</span>
+            <span class="badge">Power Automate</span>
+            <span class="badge">Git/GitHub</span>
+          </div>
+          <h3>Soft Skills</h3>
+          <div class="badge-list">
+            <span class="badge">Effective team communication</span>
+            <span class="badge">Project management</span>
+            <span class="badge">Public speaking</span>
+            <span class="badge">Analytical thinking</span>
+            <span class="badge">Cultural competence</span>
+          </div>
+        </div>
+      </section>
+      <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="section-content">
+            <span class="badge">Cisco CCNA R&amp;S</span>
+            <span class="badge">eLAO Dutch B1</span>
+            <span class="badge">eLAO English C1</span>
+            <span class="badge">National Beta Club engineering</span>
+            <span class="badge">National Beta Club french</span>
+            <span class="badge">National Beta Club performance art</span>
+            <span class="badge">Eloquence Club Richelieu 2place</span>
+            <span class="badge">ISSMA Silver Medal</span>
+        </div>
+      </section>
+      <section id="activities">
+        <h2>Activites &amp; Interests</h2>
+        <div class="section-content">
+            <span class="badge">Music (Piano/perucssions)</span>
+            <span class="badge">Climbing (4 summits &gt;4000m)</span>
+            <span class="badge">Couple Dance (Diverty Mons)</span>
+            <span class="badge">Personnal Data Analysis</span>
+            <span class="badge">Photography</span>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Tom Deneyer - Tous droits réservés</p>
+  </footer>
+  <script>
+    Chart.defaults.animation = false;
+    let aggregator = 0;
+    let lastX = null;
+    let lastY = null;
+    $(document).ready(function() {
+      const ctx = document.getElementById('bgChart').getContext('2d');
+      const lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [...Array(60).keys()],
+          datasets: [{
+            label: 'Mouse Movement',
+            data: Array(60).fill(0),
+            borderColor: 'rgba(60, 0, 0, 1)',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            fill: true,
+            tension: 0.2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: false,
+          scales: {
+            x: { display: false },
+            y: {
+              display: false,
+              min: 0,
+              max: 500
+            }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+      $(document).on('mousemove', function(e) {
+        if (lastX === null || lastY === null) {
+          lastX = e.pageX;
+          lastY = e.pageY;
+          return;
+        }
+        const dx = e.pageX - lastX;
+        const dy = e.pageY - lastY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        aggregator += dist;
+        lastX = e.pageX;
+        lastY = e.pageY;
+      });
+      setInterval(() => {
+        const dataset = lineChart.data.datasets[0].data;
+        dataset.shift();
+        dataset.push(aggregator);
+        aggregator = 0;
+        lineChart.update({ duration: 0 });
+      }, 33);
+    });
+  </script>
 </body>
 </html>
