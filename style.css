@@ -3,6 +3,7 @@
    --color-text: #a8a8a8;
    --color-primary: #f43838;
    --color-secondary: #ffffff;
+   --color-accent: #710000;
    --font-main: 'Open Sans', sans-serif;
    --font-title: 'Montserrat', sans-serif;
    --transition-default: all 200ms ease-in-out;
@@ -33,20 +34,25 @@
    transform: scale(1.05);
  }
  
+ /* Header */
  #hero {
    position: relative;
-   height: 50vh;
+   display: flex; 
+   flex-direction: column; 
+   justify-content: center; 
+   align-items: center;
+   min-height: 50vh;
    overflow: hidden;
    background: linear-gradient(135deg, #000, #330404);
-   padding: 1rem;
+   padding: 2rem; /* un peu plus grand */
  }
  
  #bg-chart-container {
    position: absolute;
    top: 0;
    left: 0;
-   width: 100%;
-   height: 100%;
+   right: 0;
+   bottom: 0;
    z-index: 0;
    opacity: 0.7;
  }
@@ -54,46 +60,51 @@
  #bgChart {
    width: 100%;
    height: 100%;
+   display: block;
+   background-color: transparent; /* Pour éviter l’effet blanc au zoom */
  }
  
+ /* Conteneur principal du contenu header */
  .header-content {
    display: flex;
    flex-wrap: wrap;
    align-items: center;
-   justify-content: space-between;
+   justify-content: center;
    max-width: 1200px;
-   margin: 0 auto;
+   width: 100%;
    position: relative;
    z-index: 2;
  }
  
+ /* Zone texte (nom, tagline, contact) */
  .header-text {
    flex: 1 1 500px;
-   padding: 0.5rem;
+   padding: 1rem;
+   text-align: center; /* Centre horizontalement le texte pour grands écrans */
  }
  
  .header-text h1 {
    font-family: var(--font-title);
-   font-size: 2.4rem;
-   margin-bottom: 0.3rem;
+   font-size: 3rem; /* plus grand */
+   margin-bottom: 0.5rem;
    color: var(--color-primary);
  }
  
  .header-text h2 {
-   font-size: 1.5rem;
-   margin-bottom: 0.8rem;
+   font-size: 1.8rem; /* agrandi un peu */
+   margin-bottom: 1rem;
    color: #fff;
  }
  
  .tagline {
    font-style: italic;
-   margin-bottom: 0.8rem;
+   margin-bottom: 1rem;
    color: #bdbdbd;
  }
  
  .contact-info {
-   font-size: 0.9rem;
-   margin-bottom: 0.8rem;
+   font-size: 0.95rem;
+   margin-bottom: 1rem;
    color: #fff;
  }
  
@@ -101,20 +112,21 @@
    display: inline-block;
    background-color: var(--color-primary);
    color: #fff;
-   padding: 0.6rem 1rem;
+   padding: 0.7rem 1.2rem;
    border-radius: 4px;
    transition: var(--transition-default);
  }
  
  .btn-cta:hover {
-   background-color: var(--color-secondary);
+   background-color: var(--color-accent);
    transform: scale(1.05);
  }
  
+ /* Photo */
  .header-photo {
    flex: 0 1 280px;
    text-align: center;
-   padding: 0.5rem;
+   padding: 1rem;
  }
  
  .header-photo img {
@@ -126,6 +138,7 @@
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
  }
  
+ /* Main */
  #mainContainer {
    display: flex;
    flex-wrap: wrap;
@@ -146,7 +159,7 @@
    background-color: #2b2b2b;
    border-radius: 0.5rem;
    padding: 0.7rem 0.9rem;
-   cursor:default;
+   cursor: default;
  }
  
  section h2 {
@@ -190,13 +203,14 @@
    border-radius: 0.3rem;
    font-size: 0.85rem;
    transition: var(--transition-default);
-   cursor:default;
+   cursor: default;
  }
  
  .badge:hover {
    background-color: #444;
  }
  
+ /* Footer */
  footer {
    text-align: center;
    padding: 0.8rem;
@@ -205,38 +219,112 @@
    font-size: 0.85rem;
  }
  
+ /* Responsive */
  @media screen and (max-width: 992px) {
+   /* Header => empile texte + photo */
    .header-content {
      flex-direction: column;
      text-align: center;
    }
+   .header-text {
+     padding: 1rem 0;
+   }
    .header-photo {
-     padding: 0.5rem 0;
+     padding: 1rem 0;
    }
    #mainContainer {
      flex-direction: column;
    }
  }
  
+ /* Petite largeur */
  @media screen and (max-width: 576px) {
    .header-text h1 {
      font-size: 2rem;
    }
    .header-text h2 {
-     font-size: 1.1rem;
+     font-size: 1.2rem;
    }
    section {
      padding: 0.6rem;
    }
  }
  
- @media print, screen and (max-height: 700px) {
-   #bg-chart-container {
-     display: none;
-   }
-   #hero {
+ /* Impression => Layout sobre noir sur blanc, max 2 pages */
+ @media print {
+   body {
      background: #fff !important;
      color: #000 !important;
+     font-size: 12px;
+     line-height: 1.2;
+     margin: 0;
+     padding: 0;
+   }
+   #hero,
+   #bg-chart-container,
+   #bgChart,
+   .header-photo,
+   .btn-cta,
+   .tagline {
+     display: none !important;
+   }
+   section {
+     background: none !important;
+     color: #000 !important;
+     padding: 0.4rem 0;
+     margin: 0 0 0.3rem 0;
+     border-radius: 0;
+   }
+   .badge {
+     background-color: #eee !important;
+     color: #000 !important;
+   }
+   .header-content,
+   .contact-info {
+     display: block;
+   }
+   #mainContainer,
+   .left-column,
+   .right-column {
+     display: block;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+     gap: 0;
+   }
+   footer {
+     background: none !important;
+     color: #000 !important;
+     margin-top: 0.5rem;
+     font-size: 11px;
+     text-align: center;
+   }
+   h1, h2, h3 {
+     color: #000 !important;
+     margin: 0;
+     font-size: 14px;
+   }
+   .detail,
+   .section-content p {
+     color: #000 !important;
+     font-size: 12px;
+     margin-bottom: 0.2rem;
+   }
+   .section-content {
+     margin-bottom: 0.2rem;
+   }
+ }
+ 
+ /* Écran très faible hauteur */
+ @media screen and (max-height: 840px) {
+   /* #bg-chart-container {
+     display: none;
+   } */
+   #hero {
+     height: 100vh;
+   }
+   .header-text {
+     max-height: 50vh;
    }
    .header-content {
      z-index: 1;
@@ -246,4 +334,5 @@
      margin-bottom: 0.6rem;
    }
  }
+ 
  
