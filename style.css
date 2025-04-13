@@ -6,7 +6,7 @@
     --color-bg: #111111;
     --color-text: #ffffff;
     --color-primary: #f43838;
-    --color-secondary: #150971; 
+    --color-secondary: #710909; 
   
     /* Typographie */
     --font-main: 'Open Sans', sans-serif;
@@ -46,8 +46,16 @@
 }
 .chart-container {
    position: relative;
-   width: 50vw;
-   height: 50vh;
+   width: 40%;
+   height: 80%;
+}
+#WhoAmI{
+   width: 60%;
+   height: 100%;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: flex-start;
 }
 #WhoAmI h1{
    color: var(--color-primary);
@@ -64,6 +72,7 @@
    color: var(--color-text);
    padding:1rem;
    transition: var(--transition-default);
+   background-color: var(--color-secondary);
 }
 #WhoAmI a:hover{
    margin-left: 1rem;
@@ -111,13 +120,10 @@
    align-items: center;
    justify-content: flex-start;
 }
-#myInfo h2 {
-   font-size: 3.5rem !important;
-   margin-bottom: 0;
-}
 #myInfo p{
    font-size: 1.1rem;
    text-align: justify;
+   width: 90%;
 }
 #mainInfomations section h2{
    margin: 0;
@@ -180,12 +186,21 @@
          width: 40rem;
          height: 30rem;
       }
+      #myInfo p{
+         width: 100%;
+      }
   }
   
   /* Écrans moyens */
   @media screen and (max-width: 992px) {
    .chart-container {
       width: 35em;
+   }
+   #myInfo p{
+      font-size: 1rem;
+   }
+   #WhoAmI{
+      width: 90%;
    }
   }
   
