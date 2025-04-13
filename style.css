@@ -255,6 +255,9 @@
    section {
      padding: 0.6rem;
    }
+   .header-photo img {
+      max-width: 200px;
+    }
  }
  
  /* Impression => Layout sobre noir sur blanc, max 2 pages */
@@ -267,6 +270,7 @@
      margin: 0;
      padding: 0;
    }
+   /* Masquer les éléments non nécessaires à l'impression */
    #hero,
    #bg-chart-container,
    #bgChart,
@@ -275,21 +279,23 @@
    .tagline {
      display: none !important;
    }
+   /* Réduire les espaces et enlever les arrière-plans */
    section {
      background: none !important;
      color: #000 !important;
-     padding: 0.4rem 0;
-     margin: 0 0 0.3rem 0;
-     border-radius: 0;
+     padding: 0.2rem 0;
+     margin: 0;
+     border: none;
+     page-break-inside: avoid;
    }
+   /* Style simple pour les badges */
    .badge {
      background-color: #eee !important;
      color: #000 !important;
+     padding: 0.1rem 0.2rem;
+     border-radius: 0;
    }
-   .header-content,
-   .contact-info {
-     display: block;
-   }
+   /* Forcer le layout en colonne unique */
    #mainContainer,
    .left-column,
    .right-column {
@@ -299,6 +305,7 @@
      padding: 0;
      gap: 0;
    }
+   
    footer {
      background: none !important;
      color: #000 !important;
@@ -308,19 +315,24 @@
    }
    h1, h2, h3 {
      color: #000 !important;
-     margin: 0;
+     margin: 0 0 0.1rem 0;
      font-size: 14px;
    }
    .detail,
    .section-content p {
      color: #000 !important;
      font-size: 12px;
-     margin-bottom: 0.2rem;
+     margin-bottom: 0.1rem;
    }
    .section-content {
-     margin-bottom: 0.2rem;
+     margin-bottom: 0.1rem;
+   }
+   /* Définir des marges de page réduites */
+   @page {
+     margin: 0.5cm;
    }
  }
+ 
  
  /* Écran très faible hauteur */
  @media screen and (max-height: 840px) {
