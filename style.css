@@ -260,8 +260,10 @@
     }
  }
  
- /* Impression => Layout sobre noir sur blanc, max 2 pages */
  @media print {
+   @page {
+     margin: 0.5cm;
+   }
    body {
      background: #fff !important;
      color: #000 !important;
@@ -270,8 +272,8 @@
      margin: 0;
      padding: 0;
    }
-   /* Masquer les éléments non nécessaires à l'impression */
-   #hero,
+ 
+   /* Masquer les parties inutiles */
    #bg-chart-container,
    #bgChart,
    .header-photo,
@@ -279,59 +281,112 @@
    .tagline {
      display: none !important;
    }
-   /* Réduire les espaces et enlever les arrière-plans */
+ 
+   /* Forcer le header à ne plus prendre de place */
+   #hero {
+     background: none !important;
+     margin: 0 !important;
+     padding: 0 !important;
+     min-height: 0 !important;
+     height: auto !important;
+     overflow: visible !important;
+     display: block !important;
+     width: 100% !important;
+   }
+ 
+   .header-content {
+     display: block !important;
+     margin: 0 !important;
+     padding: 0.1rem 0.5rem !important;
+     text-align: left !important;
+     width: auto !important;
+   }
+ 
+   .header-text {
+     margin: 0 !important;
+     padding: 0 !important;
+   }
+ 
+   .header-text h1 {
+     margin: 0 !important;
+     padding: 0 !important;
+     font-size: 30px !important;
+     color: #000 !important;
+   }
+ 
+   .header-text h2 {
+     margin: 0.1rem 0 !important;
+     padding: 0 !important;
+     font-size: 22px !important;
+     color: #000 !important;
+   }
+ 
+   .contact-info {
+     margin: 0.1rem 0 !important;
+     font-size: 18px !important;
+     color: #000 !important;
+   }
+   .contact-info a {
+     color: #000 !important;
+     text-decoration: underline !important;
+   }
+   .contact-info .contact-item:nth-child(3),
+   .contact-info .contact-item:nth-child(4) {
+     display: none;
+   }
+ 
+   /* Suppression de l'arrière-plan et de la disposition en colonnes */
+   #mainContainer,
+   .left-column,
+   .right-column {
+     display: block !important;
+     width: 100% !important;
+     margin: 0 !important;
+     padding: 0 !important;
+     gap: 0 !important;
+   }
+ 
    section {
      background: none !important;
      color: #000 !important;
      padding: 0.2rem 0;
-     margin: 0;
+     margin: 0 0 2rem 0;
      border: none;
      page-break-inside: avoid;
    }
-   /* Style simple pour les badges */
+ 
    .badge {
      background-color: #eee !important;
      color: #000 !important;
      padding: 0.1rem 0.2rem;
      border-radius: 0;
    }
-   /* Forcer le layout en colonne unique */
-   #mainContainer,
-   .left-column,
-   .right-column {
-     display: block;
-     width: 100%;
-     margin: 0;
-     padding: 0;
-     gap: 0;
-   }
-   
+ 
    footer {
      background: none !important;
      color: #000 !important;
-     margin-top: 0.5rem;
-     font-size: 11px;
+     margin-top: 0.3rem;
+     font-size: 14px;
      text-align: center;
    }
+ 
    h1, h2, h3 {
      color: #000 !important;
-     margin: 0 0 0.1rem 0;
-     font-size: 14px;
+     margin: 0 0 0.5rem 0;
    }
+ 
    .detail,
    .section-content p {
      color: #000 !important;
-     font-size: 12px;
+     font-size: 14px !important;
      margin-bottom: 0.1rem;
    }
+ 
    .section-content {
      margin-bottom: 0.1rem;
    }
-   /* Définir des marges de page réduites */
-   @page {
-     margin: 0.5cm;
-   }
  }
+ 
  
  
  /* Écran très faible hauteur */
