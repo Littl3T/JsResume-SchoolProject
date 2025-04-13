@@ -14,7 +14,7 @@
    padding: 0;
    box-sizing: border-box;
  }
- 
+
  body {
    font-family: var(--font-main);
    background-color: var(--color-bg);
@@ -226,8 +226,12 @@
      flex-direction: column;
      text-align: center;
    }
+   #hero {
+     height: 100vh;
+   }
    .header-text {
      padding: 1rem 0;
+     max-height: 40vh;
    }
    .header-photo {
      padding: 1rem 0;
@@ -239,6 +243,9 @@
  
  /* Petite largeur */
  @media screen and (max-width: 576px) {
+   #hero {
+     height: 100vh;
+   }
    .header-text h1 {
      font-size: 2rem;
    }

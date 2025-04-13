@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CV - Tom Deneyer</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="Scripts/scrollButton.js" defer></script>
+  <script src="Scripts/bannerChartJs.js" defer></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -167,66 +169,7 @@
     </div>
   </main>
   <footer>
-    <p>&copy; 2025 Tom Deneyer - Tous droits réservés</p>
+    <p>&copy; 2025 Tom Deneyer - All Rights Reserved</p>
   </footer>
-  <script>
-    Chart.defaults.animation = false;
-    let aggregator = 0;
-    let lastX = null;
-    let lastY = null;
-    $(document).ready(function() {
-      const ctx = document.getElementById('bgChart').getContext('2d');
-      const lineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: [...Array(60).keys()],
-          datasets: [{
-            label: 'Mouse Movement',
-            data: Array(60).fill(0),
-            borderColor: 'rgba(60, 0, 0, 1)',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            fill: true,
-            tension: 0.2
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          animation: false,
-          scales: {
-            x: { display: false },
-            y: {
-              display: false,
-              min: 0,
-              max: 500
-            }
-          },
-          plugins: {
-            legend: { display: false }
-          }
-        }
-      });
-      $(document).on('mousemove', function(e) {
-        if (lastX === null || lastY === null) {
-          lastX = e.pageX;
-          lastY = e.pageY;
-          return;
-        }
-        const dx = e.pageX - lastX;
-        const dy = e.pageY - lastY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        aggregator += dist;
-        lastX = e.pageX;
-        lastY = e.pageY;
-      });
-      setInterval(() => {
-        const dataset = lineChart.data.datasets[0].data;
-        dataset.shift();
-        dataset.push(aggregator);
-        aggregator = 0;
-        lineChart.update({ duration: 0 });
-      }, 33);
-    });
-  </script>
 </body>
 </html>
