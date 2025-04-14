@@ -20,7 +20,7 @@ $(document).ready(function() {
                 label: 'Mouse Movement',
                 data: Array(60).fill(0),
                 borderColor: 'rgba(60, 0, 0, 1)',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
                 fill: true,
                 tension: 0.2
             }]
