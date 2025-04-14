@@ -7,7 +7,7 @@ let isTouchOrSmallScreen = (('ontouchstart' in window) || (window.innerWidth <= 
 let startTime = Date.now();
 // strengthGraph est l'intensité de la coubre random pour modbile et currentValue va changer mais ici valeur initale
 const strengthGraph = 20;
-let currentValue = 200;
+let currentValue = 0;
 
 $(document).ready(function() {
   // Création du graphique de base
@@ -76,8 +76,8 @@ $(document).ready(function() {
             const randomOffset = (Math.random()-Math.random()) * strengthGraph;
             currentValue += randomOffset;
 
-            if (currentValue < 50) {
-                currentValue = 50;
+            if (currentValue < 0) {
+                currentValue = 0;
             }
             if (currentValue > 300) {
                 currentValue = 300;
