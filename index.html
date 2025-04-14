@@ -17,7 +17,9 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
         <script src="Scripts/scrollButton.js" defer></script>
         <script src="Scripts/bannerChartJs.js" defer></script>
-        <link rel="stylesheet" href="style.css">
+        <script src="Scripts/lazyLoad.js" defer></script>
+        <script src="Scripts/landingAnimation.js" defer></script>
+        <link rel="stylesheet" href="style.css" >
     </head>
     <body>
         <header id="hero">
@@ -26,8 +28,9 @@
             </div>
             <div class="header-content">
                 <div class="header-text">
-                    <h1>Tom Deneyer</h1>
-                    <h2>Power Platform Developer &amp; Cybersecurity Enthusiast</h2>
+                    <h1 id="name">Tom Deneyer</h1>
+                    <!-- <h2 id="typingTitle">Power Platform Developer &amp; Cybersecurity Enthusiast</h2> -->
+                    <h2 id="typingTitle"></h2>
                     <p class="tagline">Data lover | Full-Stack Developer | Cybersecurity Student</p>
                     <div class="contact-info">
                         <span class="contact-item">

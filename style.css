@@ -44,7 +44,7 @@ a:hover {
    align-items: center;
    min-height: 50vh;
    overflow: hidden;
-   background: linear-gradient(135deg, #000, #330404);
+   background: linear-gradient(135deg, #000, #530606);
    padding: 2rem;
 }
 
@@ -154,12 +154,18 @@ a:hover {
 }
 
 section {
+   transition: all 600ms ease-in-out;
+   transform: translateY(20px);
+   opacity: 0;
    background-color: #2b2b2b;
    border-radius: 0.5rem;
    padding: 0.7rem 0.9rem;
    cursor: default;
 }
-
+section.lazy-loaded{
+   opacity: 1;
+   transform: translateY(0);
+}
 section h2 {
    font-family: var(--font-title);
    color: var(--color-primary);
@@ -340,6 +346,8 @@ footer {
        margin: 0 0 2rem 0;
        border: none;
        page-break-inside: avoid;
+       opacity: 1 !important;
+       transform: translateY(0) !important;
    }
    .badge {
        background-color: #eee !important;
