@@ -109,15 +109,14 @@ a:hover {
 
 .btn-cta {
    display: inline-block;
-   background-color: var(--color-primary);
-   color: #fff;
+   background-color: var(--color-accent);
+   color: #ffffff;
    padding: 0.7rem 1.2rem;
    border-radius: 4px;
    transition: var(--transition-default);
 }
 
 .btn-cta:hover {
-   background-color: var(--color-accent);
    transform: scale(1.05);
 }
 
