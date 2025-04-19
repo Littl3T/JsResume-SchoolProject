@@ -1,4 +1,5 @@
-1. Header Interactif avec Chart Js
-2. LazyLoad des sections du sites aprés le header
-3. Apparition du texte du header au chargement de la page en mode "machine à écrire"
-4. Scroll smooth optimisé pour le bouton du header qui insite à découvrir mon cv (justifiable car header 100vh sauf si trés grand écran)
+Comme demandé dans le cahier de charge, voici la liste des fonctionnalités JavaScrip implémentés sur ce projet:
+    1. Header Interactif avec Chart Js
+    2. LazyLoad des sections du sites aprés le header
+    3. Apparition du texte du header au chargement de la page en mode "machine à écrire"
+    4. Scroll smooth optimisé pour le bouton du header qui insite à découvrir mon cv (justifiable car header 100vh sauf si trés grand écran)
