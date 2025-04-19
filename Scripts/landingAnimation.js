@@ -11,6 +11,7 @@ function typeWriter() {
     }
 }
 $(document).ready(function () {
+    typingTitle.innerHTML = ""; // Effacer le texte actuel
     // Démarrer l'animation de la saisie
     typeWriter();
 });
